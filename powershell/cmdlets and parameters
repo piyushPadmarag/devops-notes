@@ -1,0 +1,15 @@
+cmdlets example: 
+Get-service : retrieves all the services on the server
+
+Get-service -Name spooler : Here -Name is the parameter
+
+Stop-service: 
+
+Start-service
+
+Get-LocalUser : Get-LocalUser -Name 'global'
+
+A string needs to be between quotes '-----' 
+
+
+https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.4

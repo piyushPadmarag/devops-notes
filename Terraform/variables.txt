@@ -1,0 +1,146 @@
+to use variables in terraform, type keyword variable followed by var name 
+ex: fikename = var.filename
+
+data types: 
+
+string: "like this"
+number: 5, 6.2
+bool: true 
+list: ["a", 15, true]
+set: 
+map: 
+    {
+    name = "John"
+    age  = 52
+    }
+
+--------------------Example:-----------------------
+
+variable "name" {
+     type = string
+     default = "Mark"
+  
+}
+variable "number" {
+     type = bool
+     default = true
+  
+}
+variable "distance" {
+     type = number
+     default = 5
+  
+}
+variable "jedi" {
+     type = map
+     default = {
+     filename = "/root/first-jedi"
+     content = "phanius"
+     }
+  
+}
+
+variable "gender" {
+     type = list(string)
+     default = ["Male", "Female"]
+}
+variable "hard_drive" {
+     type = map
+     default = {
+          slow = "HHD"
+          fast = "SSD"
+     }
+}
+variable "users" {
+     type = set(string)
+     default = ["tom", "jerry", "pluto", "daffy", "donald", "jerry", "chip", "dale"]
+
+  
+}
+
+--------------usage-------------------------
+main.tf file:
+
+resource "local_file" "jedi" {
+     filename = var.jedi["filename"]
+     content = var.jedi["content"]
+}
+
+variable.tf file:
+
+variable "jedi" {
+     type = map
+     default = {
+     filename = "/root/first-jedi"
+     content = "phanius"
+     }
+  
+}
+---------------------------------------------------------
+
+priority: 
+command line flags > *.auto.tfvars > terraform.tfvars > Env vars 
+
+--------------------------------------------------------------------------------------------------
+#resource attributes: 
+
+resource "local_file" "time" {
+filename = "/root/time.txt"
+content = "Time stamp of this file is ${time_static.time_update.id} "
+}
+resource "time_static" "time_update" {
+}
+
+first terraform creates the time_update resource then it creates the time rresource
+Resources are deleted in the reverse order of creation
+--------------------------------------------------------------------------------------------------
+terraform Show : 
+
+The terraform show command is used to provide human-readable output from a state or plan file. 
+This can be used to inspect a plan to ensure that the planned operations are expected, or 
+to inspect the current state as Terraform sees it.
+
+--------------------------------------------------------------------------------------
+
+Data resource dependency:
+Example 1: reference expressions
+
+resource "tls_private_key" "pvtkey" {
+     algorithm = "RSA"
+     rsa_bits = "4096"
+   }
+   
+   resource "local_file" "key_details" {
+       filename = "/root/key.txt"
+       content = tls_private_key.pvtkey.private_key_pem
+       
+   }
+
+Example 2: explicit reference
+
+resource "local_file" "whale" {
+     filename = "/root/whale"
+     content = "whale"
+     depends_on = [ local_file.krill ]
+ }
+ 
+ resource "local_file" "krill" {
+     filename = "/root/krill"
+     content = "krill"
+ }
+-------------------------------------------------------------------------------------
+terraform destroy: 
+to destroy the resources created using the config file 
+
+---------------------------------------------------------------------------------
+output variable:
+resource "local_file" "time" {
+     filename = "/root/time.txt"
+     content = "Time stamp of this file is ${time_static.time_update.id} "
+     }
+     resource "time_static" "time_update" {
+     }
+output "demo" {
+     value = "time_static.time_update.id"
+     description = "the value of the id will be displayed at the time of apply"
+}     

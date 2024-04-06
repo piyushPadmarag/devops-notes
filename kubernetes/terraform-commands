@@ -1,0 +1,17 @@
+terraform validate: use to validate the configuration. it validated the main.tf and if there is an error it will show hints to fix it
+
+terraform fmt: to restructure the format of the config file. it improves the readability of the fime 
+
+terraform show: prints the current state of the infra/resource with all the attributes. -json flag can be used to see in json format
+
+terraform providers: to see the list of all provides in the dir, 
+
+terraform output: to print all the output variables with variables
+
+terraform refresh: to sync terraform with the real world infra. it will modify the state file but not the current configuration.
+
+terraform graph: to create a visual representation of the dependencies of the terraform configuration or an execution plan.
+
+
+
+

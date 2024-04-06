@@ -1,0 +1,30 @@
+Which option should we use to disable state?  cannot disable the state
+
+Format of the state file? json 
+
+Which of the following commands does NOT refresh the state? terraform init
+
+----------------------------------------------------------------------------------
+Terraform must store state about your managed infrastructure and configuration. 
+
+This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures.
+
+This state is stored by default in a local file named "terraform.tfstate"
+
+Terraform uses state to determine which changes to make to your infrastructure. 
+
+Prior to any operation, Terraform does a refresh to update the state with the real infrastructure.
+
+Terraform provides the terraform state command to perform basic modifications of the state using the CLI.
+
+------------------------------------------------------------------------------------
+
+USE OF STATE:
+
+1. Mapping to the Real World: requires some sort of database to map Terraform config to the real world.
+
+2. Metadata: Alongside the mappings between resources and remote objects, Terraform must also track metadata such as resource dependencies.
+
+3. Performance: Terraform stores a cache of the attribute values for all resources in the state
+
+4. Syncing: when using Terraform in a team it is important for everyone to be working with the same state so that operations will be applied to the same remote objects. Remote state is the recommended solution to this problem

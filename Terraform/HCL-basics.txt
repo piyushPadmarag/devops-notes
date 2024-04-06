@@ -1,0 +1,32 @@
+official providers: aws, azure, gcp, etc 
+partner providers: heroku, digitalocean 
+community providers: activedirectory, ucloud etc 
+
+terraform init: 
+showes the version of the plugin being installed, 
+downloaded in .terraform/plugin in the work dir containing config files 
+
+main.tf: a single config file containing all the resource definition
+
+terraform.tfstate and terraform.tfstate.backup: these files contain the Terraform state
+.terraform: this folder contains the modules and plugins used to provision the
+
+resource "local_file" "cyberpunk" 
+{
+  filename     = "/root/cyberpunk2077.txt"
+  content  = "All I need for Christmas is Cyberpunk 2077!"
+}
+
+we can use multiple providers in the same directory
+
+resource "local_file" "my-pet" {
+filename = "/root/pet-name"
+content = "My pet is called finnegan!!"
+}
+resource "random_pet" "other-pet" {
+length = 1
+prefix = "Mr"
+separator = "."
+}
+
+------

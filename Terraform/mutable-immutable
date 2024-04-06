@@ -1,0 +1,22 @@
+configuration drift: When multiple serviers are running different versions of 
+software due to updates failing for some servers. This happens with mutable infrastructure.
+
+
+mutable infra: Mutable infrastructure refers to infrastructure that can be modified after it has been deployed. This might involve updating the configuration of a server, installing new software, or making other changes to the infrastructure.
+
+immutable infra: is the infrastructure that is designed and managed in a way that makes it difficult or impossible to make changes to existing infrastructure once it has been deployed. Any Change is achieved by replacing existing resources with new ones, rather than modifying them in place.
+
+ advantage of immutable infrastructure:
+
+ Improved reliability
+ Enhanced security
+ Simplified rollout and updates
+ Improved troubleshooting
+ Enhanced scalability
+
+ How do you create an immutable infrastructure?
+ Use infrastructure as code (IaC) to define and provision your infrastructure
+ Use version control for your IaC code:
+ Implement a continuous integration/continuous delivery (CI/CD) pipeline
+ Use ephemeral resources:
+ Use containers or other deployment technologies

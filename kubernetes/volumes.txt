@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: story-deployment
+spec:
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: story
+  template:
+    metadata:
+      labels:
+        app: story
+    spec:
+      containers:
+        - name: story
+          image: story-image
+          volumeMounts: 
+            - mountPath: /tmp
+              name: story-volume
+      volumes:
+        - name: story-volume
+          # emptyDir: {} (volume type is defined with emptydir)
+          hostPath: 
+            path: /volume
+            type: DirectoryOrCreate
+
+---
+
+apiVersion: v1
+kind: service
+metadata: 
+  name: story-service 
+spec:
+  selector:
+    app: story
+  type: LoadBalancer
+  ports:
+    - protocol: 'TCP'
+      port: 80
+      targetPort: 8080
+
+supports many different drivers and types
+volumes are not neccessarily persistent
+volumes survuve container restarts but not necessarily pod restarts
+Normal volumes are dependent on pods and their lifecycle
+Defined with the pod spec
+Emptydir: most basic type of volume, data is inconsistent as it creates emptiy dir per pod
+
+hostpath: path on host machine and exposed to multiple pods, consistent data but if multiople hosts then issue
+
+CSI: container storage interface, quite flexible volume type
+
+https://kubernetes.io/docs/concepts/storage/volumes/l

@@ -1,0 +1,31 @@
+Identity: is a representation of a person, app or a device
+          usually requires a password or certs or a secrets to prove
+
+Identity management is done by azure active directory, now entra. 
+
+Active directory and entra are not exact replcement of each other. 
+
+AAD focus more towards on prem and entra towards cloud.
+
+Entra ID handles authentications for applications using token based auth.
+
+Benefits: Security
+          Reduced development time as Entra will handle auth
+          Easier support
+          additional features like looking for login pattern with AI to check for fraudster
+          Centralised administrator
+          single sign on 
+          integrated with other azure services
+
+authentication VS Authorization:
+
+authentication is user providing who they are (login id password)
+
+Authorization is ensuring the user is permitted to perform a certain task(role based auth)
+
+Entra ID conditional access: Not all attempts to login are equally safe. 
+                            Ex: someone loggin in from an unknown or not used location.
+                            someone who suddenly logs in after much time 
+
+Passwordless authentication: Iris, face,fingerprint etc 
+

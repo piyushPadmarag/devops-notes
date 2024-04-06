@@ -1,0 +1,48 @@
+Container storage (blob):
+    BLOB is binary large objects. These are files of any type. 
+
+    stored loosely in a Container. can be public or private. unstructured data.
+
+    can create multiple Container for gpv2. each container can contain blobs. can be
+
+    organised in folders. similar to s3 in aws, azure keeps 3 copies of the data by default.
+
+Disk storage
+
+Azure file storage:
+        like a drive on cloud similar to the local drive. 
+        good for backup of the local drives.
+        mount the storage to a server.
+
+Azure file sync: 
+        hybrid option of on-prem with cloud as well option 
+
+storage tiers
+
+Azure storage:  General purpose (GPv2) is called as standard storage. 
+                
+                It is divided into 4 types: Container, file, Queue, table
+
+                can hold upto 5PB data. extremely cheap. 
+
+Premium storage: 
+
+Blob storage: Block blob, page block
+
+              Uses SSD, high ops, low latemncy
+
+High performance:
+Premium SSD
+Premium SSD v2
+ultra Disk
+
+Access tiers:
+            Hot: default
+            cool: cheaper but expensive access 
+            cold: cheper than coop, expensive than cool
+            Archieve: cheapest but most expensive access
+
+Azure migrate tool: used to migrate on-prem to azure using azure guided expertise
+
+Azure data box: uses to transport huge amount of data to data-centres and then upload to cloud. MS will mail it to 
+                you, and you mail it back to them.

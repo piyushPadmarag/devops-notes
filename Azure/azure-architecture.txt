@@ -1,0 +1,32 @@
+Regions: Areas where azure has a set of data-centres. one set of data-centre is a set of 3. 
+         usually each region is connected with another region making it a region pair.(canada central and canada east)
+
+         https://datacenters.microsoft.com/globe/explore/
+
+soverign azure: Not connected to public cloud. Requires approval to join. 
+
+Availability Zones: Physically seperate locations within each regions
+                    consists of one or more data centres.
+                    Have their own power, cooling system and infrastructures.
+                    not every regions support availability zones.
+
+Three types of AZ services:
+
+1. Zonal services: You can choose a specific availability zone to deploy the services. You should then
+                   deploy the duplicate service to another zone for reseliency
+                   
+Hierarchy:
+
+Management groups > Subscription > Resource groups > Resources 
+
+Resource groups: A logical grouping of resources. All resources in the resource group should have similar
+                 lifecycle: deploy together-delete together.
+                 Resources belong to only one resource group.
+                 permissions can be assigned at the resource group level.
+
+Subscriptions: The billing unit within azure. 
+               Always a payment method is associated with it
+               Users can have access to more than one subscription
+               
+Management Groups: contains multiple subscriptions
+

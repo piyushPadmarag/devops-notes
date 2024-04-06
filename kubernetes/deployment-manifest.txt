@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: any-name
+  # labels: 
+  #   group: example (same should be present in service)optional parameter
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app-name 
+      tier: backend
+    # matchExpressions:
+    #   -{key: app, operator: In, values: [my-container, my-container-2]} 
+  spec:
+    containers:
+      - name: my-container
+        image: my-container:v1 
+        livenessProbe:
+          httpGet:
+             path: /some-path
+             port: 8080
+          periodSeconds: 5
+          initialDelaySeconds: 10
+        
+      - name: my-container-2
+        image: abc:v2
+        imagePullPolicy: Always
+
+selector is used to connect pods to Deployment or service. 
+matchLabels app of Deployment should match with selector app in service 
+matchExpressions selector matches the key IN values(container)
+

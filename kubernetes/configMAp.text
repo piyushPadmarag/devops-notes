@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: data-store-env 
+data:
+  folder: 'story'
+  key1: 'value1'
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: story-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: story
+    spec:
+      containers:
+        - name: story
+          image: story-image
+          env:
+            - name: STORY_FOLDER (this name is from the code wich will use the value)
+              valueFrom:   
+                configMapKeyRef:
+                  name: data-store-env (name at line)
+                  key: folder (key is folder at line 6, so the value of folder will be picked)
+          volumeMounts: 
+            - mountPath: /tmp
+              name: story-volume
+      volumes:
+        - name: story-volume
+          # emptyDir: {} (volume type is defined with emptydir)
+          hostPath: 
+            path: /volume
+            type: DirectoryOrCreate

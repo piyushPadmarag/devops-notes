@@ -1,0 +1,7 @@
+command: 
+terraform state 
+
+sub-command: 
+list, mv, pull, rm, show 
+
+

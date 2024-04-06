@@ -1,0 +1,63 @@
+------------------------------------lifecycle rules--------------------------------------
+lifecycle {
+    create_before_destroy = true
+}
+
+lifecycle {
+    prevent_destroy = true;
+}
+
+-----------------------------------------------------------------------------
+resource "random_string" "string" {
+    length = var.length
+    keepers = {
+        length = var.length
+    }
+    lifecycle {
+        create_before_destroy =  true
+    }
+    
+}
+-------------------------------------------------------------------------------
+All the resources for the random provider can be recreated by using a map type argument called keepers. A change in the value will force the resource to be recreated.
+
+
+This argument accepts arbitrary key/value pairs 
+
+and in our example:
+
+resource "local_file" "file" {
+    filename = var.filename
+    file_permission =  var.permission
+    content = random_string.string.id
+    
+}
+
+resource "random_string" "string" {
+    length = var.length
+    keepers = {
+        length = var.length
+    }  
+    
+}
+
+ it is set to the key called length whose value was updated from 10 to 12 in the variables.tf file.
+
+-----------------------------------------Data Souce-----------------------------------
+
+ A data source once created, cannot be used to create, update, and destroy infrastructure.
+ A data source can be created using the data block.
+
+ output "os-version" {
+    value = data.local_file.os.content
+  }
+  data "local_file" "os" {
+    filename = "/etc/os-release"
+  }
+
+  here the content od os-release will be the value of the output variable os-version
+
+  ---------------------------------------------------------------------------------------
+  Meta arguments: used within any resource block to change the behaviour of the resource.
+
+  
