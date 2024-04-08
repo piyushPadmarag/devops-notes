@@ -6,6 +6,13 @@ A container is a process which runs on a host. The host may be local or remote.
 
 Deamon is a background process 
 
+Deamon is a program than runs without break.
+
+A container only lives as long as the process inside is alive
+
+Docker area: /var/lib/docker
+Volume area: /var/lib/docker/volumes
+
 Lifecycle of a containeR:
 
 The complete lifecycle of a docker container revolves around five phases:
