@@ -21,3 +21,6 @@ FROM: used to set base image, Dockerfile starts from this instruction
 LABEL: used for image organization based on projects
 
 RUN: execute instructions, each run adds a layer on top of image
+
+docker file is written in domain specific language(DSL)
+
