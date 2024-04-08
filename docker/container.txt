@@ -4,6 +4,11 @@ Docker runs processes in isolated containers.
 
 A container is a process which runs on a host. The host may be local or remote. 
 
+
+Containerisation is a process to bundle together application and it's configuration and dependency. 
+
+This bundle is called container.
+
 Deamon is a background process 
 
 Deamon is a program than runs without break.
