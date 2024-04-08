@@ -14,3 +14,10 @@ CMD [5]
 Means sleep 5
 
 Image follows union file system (ufs) file structure. It has a layered architecture
+
+Commonly used instructions of Dockerfile:
+FROM: used to set base image, Dockerfile starts from this instruction
+
+LABEL: used for image organization based on projects
+
+RUN: execute instructions, each run adds a layer on top of image
