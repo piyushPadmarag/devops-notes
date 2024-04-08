@@ -1,0 +1,7 @@
+Bridge is to access public network from a private network.
+
+All containers can communicate with each other.
+
+Docker privdes subnets to all container by default if not specified during creation
+
+docker network create --subnet 10.1.0.0/16 --gateway 10.1.0.1 my-network
