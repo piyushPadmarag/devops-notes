@@ -1,0 +1,34 @@
+YAML files executed from bottom to top
+key value pair:
+
+Vegetable: carrot
+Liquid: water
+
+Storing in array needs a -
+Fruits: 
+ - apple
+ - banana
+ - orange
+The - indicates that it's an element of an array
+
+Storing in Dictionary:
+
+Banana:
+  Calories: 123
+  Fat: 22
+  Energy: 
+     Good energy: 3
+     Bad energy: 5
+
+Key value/dic/list
+
+Fruits:
+   - banana:
+         Cal: 44
+         Ene: 66
+   - Grape:
+        Cal: 77
+
+List/array: ordered collection
+
+Dictionary/map: unordered collection 
