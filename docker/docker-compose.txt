@@ -1,1 +1,3 @@
 Docker compose talks with docker engine
+To link two Microservice in containers, we use
+depends_on in docker compose file
