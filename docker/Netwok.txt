@@ -1,5 +1,7 @@
 Bridge is to access public network from a private network.
 
+Bridge by default: docker0
+
 All containers can communicate with each other.
 
 Docker privdes subnets to all container by default if not specified during creation
