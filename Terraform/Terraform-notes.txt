@@ -1,0 +1,76 @@
+Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. You can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle. Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.
+
+The core Terraform workflow consists of three stages:
+    • Write: You define resources, which may be across multiple cloud providers and services. For example, you might create a configuration to deploy an application on virtual machines in a Virtual Private Cloud (VPC) network with security groups and a load balancer.
+    • Plan: Terraform creates an execution plan describing the infrastructure it will create, update, or destroy based on the existing infrastructure and your configuration.
+    • Apply: On approval, Terraform performs the proposed operations in the correct order, respecting any resource dependencies. For example, if you update the properties of a VPC and change the number of virtual machines in that VPC, Terraform will recreate the VPC before scaling the virtual machines.
+
+
+an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. 
+
+IAC or Infrastructure as Code allows you to build, change, and manage your infrastructure through coding instead of manual processes.
+
+terraform init - initializes the current directory
+terraform refresh - refreshes the state file
+terraform output - views Terraform outputs
+terraform apply - applies the Terraform code and builds stuff
+terraform destroy - destroys what has been built by Terraform
+terraform graph - creates a DOT-formatted graph
+terraform plan - a dry run to see what Terraform will do
+
+Terraform validate: to check for symtwx errors in configuration file
+
+Terraform init is a control to initialize an operational index that contains Terraform pattern files. This control can be looped multiple times. 
+
+Terraform can be used for on-prem infrastructure.
+
+multi-provider deployments are supported by Terraform
+
+It can do complete orchestration and not just configuration management 
+
+terraform -version of the command to identify the version which we are running
+The HashiCorp Configuration Language, which is comparable to JSON, is used by Terraform (HCL).
+
+Terraform stores information about your infrastructure in a state file. This state file keeps track of resources created by your configuration and maps them to real-world resources.
+
+State file is a JSON data structure that maps
+the real world infrastructure resources to the resources definition in the configuration files.
+
+The state file is commonly stored either on a local machine, in a remote storage location (like a storage account in Azure, or S3 bucket in AWS), or in Terraform cloud. By default, it is stored on the local machine and is named “terraform. Tfstate”.
+
+
+provider "aws" {
+        region = "us-east-1"
+}
+
+
+resource "aws_instance" "ec2_variable" {
+        ami = "ami-05fa00d4c63e32376"
+        instance_type = "t2.medium"
+        vpc_security_group_ids = ["launch-wizard-4"]
+        availability_zone = "us-east-1c”
+        key_name = "awskey2"
+
+	root_block_device {
+           volume_size  = 30
+        }
+
+        tags = {
+                Name = "ansible"
+        }
+}
+Orchestration/provisioning is a process where we create the infrastructure – virtual machines, network components, databases, etc. Whereas, on the other hand, configuration management is a process of automating versioned software component installation, OS configuration tasks, network and firewall configuration, etc.
+
+Terraform and Ansible are capable of performing both tasks. Terraform offers a comprehensive solution to manage infrastructure unlike ansible which focuses more on configuration management.
+Terraform follows the declarative approach, ensuring that if your defined environment suffers changes, it rectifies those changes. This tool attempts to reach the desired end state described by the sysadmin. Puppet also follows the declarative approach. With terraform, we can describe the desired state and figure out how to move from one state to the next automatically.
+Ansible is of hybrid nature. It follows both declarative and procedural style configuration.  It performs ad-hoc commands to implement procedural-style configurations. Please read the documentation of Ansible very carefully to get in-depth knowledge of its behavior. It’s important to know whether you need to add or subtract resources to get the desired result or need to indicate the resources required explicitly.
+
+
+It is recommended to follow the immutable infrastructure approach, where Terraform takes care of the infrastructure management, and Ansible helps apply the changed configuration. This is also known as the Blue/Green deployment strategy, where the risk of configuration failure is reduced.
+
+terraform workflow has three steps.
+Write: Author the infrastructure as code.
+Plan: Preview changes Terraform will make before applying.
+Apply: Provision the infrastructure and apply the changes.
+
+Terraform Cloud is a remote environment that is optimized for the Terraform workflow. It provides features like workspaces and state locking, which allows people in big teams to collaborate.
