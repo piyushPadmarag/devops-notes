@@ -24,3 +24,5 @@ RUN: execute instructions, each run adds a layer on top of image
 
 docker file is written in domain specific language(DSL)
 
+Alpine is a version type of image having min amount of code needed. Compact.
+
