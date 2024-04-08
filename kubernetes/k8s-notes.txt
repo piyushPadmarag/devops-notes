@@ -1,0 +1,60 @@
+K8s is an open source container orchestration system designed by Google, using go language. it is used to automate tasks such as the management, monitoring, scaling, and deployment of containerized applications
+
+Container orchestration automates the provisioning, deployment, networking, scaling, availability, and lifecycle management of containers.
+tools: 1) Docker swarm, 2) Apache Mesos, and 3) Kubernetes.
+
+Master node: it controls all the worker node. Cordinate all activities in the cluster ex scheduling application, maintaining application  scaling .
+It works in control plane. controls and manages the set of worker nodes
+
+controller: for auto healing scale up and scale down
+
+kub-api server: takes instruction from user talks to kub-scheduler and gives instructions to worker nodes.
+Kubernetes API server is the central management entity that receives
+all REST requests for modifications (to pods, services, replication sets/controllers and
+others), serving as frontend to the cluster. Also, this is the only component that communicates with the etcd cluster, making sure data is stored in etcd and is in agreement with the service details of the deployed pods.
+
+kube scheduler: is a control plane process which assigns Pods to Nodes.  schedules actions related to pods. Schedule PODs according to available resources on executor nodes.It reads the service’s operational requirements and schedules it on the best fit node. The scheduler runs each time there is a need to schedule pods. The scheduler must know the total resources available as well as resources allocated to existing workloads on each node.
+
+ETCD: keeps record of all instructions. it is a database. etcd is a consistent and highly-available key value store used as Kubernetes' backing store for all cluster data (such as number of pods, their state, namespace.
+
+CNI: Container Network Interface. to estaiblish communication betweeb pods. handles ip addressing
+
+Kublet => Agent for managing and communicating with the master. takes report from c-advisor on health of pods container. it forwards info to master node.Each node has a running kubelet service that updates the running node accordingly with the configuration(YAML or JSON) file. NOTE: kubelet service is only for containers created by Kubernetes.
+
+Pods are the logical entity that holds container, Kubernetes packages one or more containers into a higher-level structure called a pod. Pod runs one level higher to the container.
+
+A POD always runs on a Node but they share a few resources which can be Volumes, IP, Info about how to run each container.  All containers in the pod are going to be scheduled on an equivalent node.
+
+cAdvisor is an open-source agent integrated into the kubelet binary that monitors resource usage and analyzes the performance of containers. It collects statistics about the CPU, memory, file, and network usage for all containers running on a given node
+
+Kube-proxy: This service is responsible for the communication of pods within the cluster and to the outside network. it runs on every node. responsible for watching the API Server for changes on services and pods definitions to maintain the entire network configuration up to date, ensuring that one pod can talk to another pod. 
+
+Kubectl : The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
+
+Kube-apiserver: Master API service which acts as an entry point to K8 cluster.
+
+Kube-controller-manager:  is a control plane component that watches the shared state of the cluster through the apiserver and makes changes attempting to move the current state towards the desired stable state
+runs controller processes.
+Logically, each controller is a separate process, but to reduce complexity, they are all compiled into a single binary and run in a single process.
+type of services:
+1. node port:  an open port on every node of your cluster
+2. cluster ip: provides a load-balanced IP address
+3. load balancers in Kubernetes are responsible for distributing a set of tasks (incoming traffic) to the pods using round robin algorithm.
+
+Internal load balancer – This type of balancer automatically balances loads and allocates the pods with the required incoming load.
+
+External Load Balancer – This type of balancer directs the traffic from the external loads to backend pods.
+
+The namespaces allow applications to be organized into groups that make sense, such as a namespace for all monitoring applications and another for all security applications.
+
+default range of ports used to expose a NodePort service: 30k - 32767
+
+default Service type: cluster ip
+
+default protocol for a Service: tcp
+Ingress network: object that allows users to access your Kubernetes services from outside the Kubernetes cluster. Users can configure the access by creating rules that define which inbound connections reach which services.
+
+replica set: is a Kubernetes object that ensures there is always a stable set of running pods for a specific workload. The ReplicaSet configuration defines a number of identical pods required, and if a pod fails, creates more pods to compensate for the loss.
+In replica set spec: template, replicas, selector
+
+Objects: pods, deployment, services, volumes etc
