@@ -1,0 +1,16 @@
+ARG is used when image creation is happening
+
+ENV is used when container creation process is happening
+
+CMD is used to provide default values to container. We can use cmd only once
+
+RUN is executed when image is created
+
+ENTRYPOINT  will run before cmd. Cascade cmd, ex: /bin/sh 
+
+ENTRYPOINT [ "sleep"]
+CMD [5]
+
+Means sleep 5
+
+Image follows union file system (ufs) file structure. It has a layered architecture
