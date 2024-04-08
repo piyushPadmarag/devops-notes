@@ -1,0 +1,5 @@
+volume location: /var/lib/
+
+to persist a data, map the docker volume to a dir on the host 
+
+docker run -it -v /opt/host-folder:/var/lib/docker-folder redis

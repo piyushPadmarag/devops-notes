@@ -1,1 +1,31 @@
-Hi there
+container is a process. it has a pid 
+
+Docker runs processes in isolated containers. 
+
+A container is a process which runs on a host. The host may be local or remote. 
+
+Deamon is a background process 
+
+Lifecycle of a containeR:
+
+The complete lifecycle of a docker container revolves around five phases:
+
+Create >>> Running >>> Paused /unpause >>> Stopped >>> Killed 
+
+
+Docker ----> Container D -----> run C ----->container 
+                -                               ^
+                -                               ^
+                -----------> shim---------------^
+
+
+container D: creates and launches containers 
+            maintainence, monitoring of lifecyxle 
+            sub-process of docker
+
+
+Shim: The moment containeR starts run c brcomes inactive but before that it creates shim.
+      Run c hands over all activity to shim and shim keeps the health info of container. 
+
+Control Group: when we create a container, it has RAM, processor, storage etc. These are 
+                all provided by Control group

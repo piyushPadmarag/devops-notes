@@ -1,0 +1,48 @@
+docker run redis:4.2
+
+docker host: the underlying machine on which docker is installed and running
+
+docker inspect container-name 
+
+docker search nginx
+
+docker pull nginx
+
+docker create --name web1 httpd
+
+docekr start web1 
+
+docekr stop web1
+
+docker pause web1 
+
+docker rm -f web1 
+
+docker exec -it web1 bash 
+
+docker run -dit --name web1 ubuntu
+
+-it flag is needed for os containers or else it will exit
+
+docker rmi httpd 
+
+docker images (to list all pulled images)
+
+docker inspect web1 |grep -i ipaddr 
+
+docker run -d --name web1 --memory 10M --cpus="0.005" httpd 
+
+docker run -d --name web1 -h sample_host_name --memory 10M --cpus=".9" httpd 
+
+docker network instpect network-name 
+
+docker network create vivo-bridge
+
+docker network list 
+
+docker network inspect vivo-bridge
+
+docker network create --subnet 10.1.0.0/16 --gateway 10.1.0.1 my-network
+
+docker run --name web1 --net=my-network -d -p 8080:80 httpd (8080 is container port and 80 is httpd port)
+
