@@ -1,0 +1,4 @@
+open chorme> in new tab> inspect> console> 
+
+console.log('hello world');
+alert('this is piyush');

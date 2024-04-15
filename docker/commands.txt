@@ -46,3 +46,5 @@ docker network create --subnet 10.1.0.0/16 --gateway 10.1.0.1 my-network
 
 docker run --name web1 --net=my-network -d -p 8080:80 httpd (8080 is container port and 80 is httpd port)
 
+
+
