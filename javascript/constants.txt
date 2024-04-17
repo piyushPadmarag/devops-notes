@@ -1,0 +1,64 @@
+const interestRate = 0.3
+
+console.log(interestRate);
+
+Primitive types: 
+
+        let name = 'mosh'; //string
+
+        let age = 30; //number literal
+
+        let isApprove = false; //boolean 
+
+        let firstName = undefined;
+
+        let selectedColour = null;
+
+
+Objects:
+
+        let person = {
+            name: 'pp',
+            age: 44
+        };
+        console.log(person.name);
+
+        person.name = 'john';
+        console.log(person.name);
+
+        person['name'] = 'sugi';
+        console.log(person.name);
+
+        let selection = 'name';
+        person[selection] = 'hello'
+        console.log(person.name);
+
+Array:
+        let selectedColours = ['red', 'blue'];
+        console.log(selectedColours[1]);
+        selectedColours[2] = 'green';
+        console.log(selectedColours);
+        selectedColours[3] = 33;
+        console.log(selectedColours);
+        console.log(selectedColours.length);
+
+Functions:
+        function greet(name, lastName) {
+            console.log('Hello '+ name + lastName);
+        }
+        greet('sugi', ' singh');
+
+        greet('sugu', ' singh');
+
+        name = 'piyush'
+
+        greet(name, ' singh');
+
+---------------------------------------------------        
+        function square(number) {
+            return number * number;
+        }
+        console.log(square(5));
+
+        let number = square(2);
+        console.log(number);

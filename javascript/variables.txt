@@ -1,0 +1,24 @@
+open chorme> in new tab> inspect> console> 
+
+console.log('hello world');
+
+alert('this is piyush');
+
+variables cant be a reserved keywords
+
+by default variables in js are undefined. we need to give some values. 
+
+betterto have meaninigful names for variables
+
+cannot start with a number ex 1number
+
+cannot contain space or hyphen (-)
+
+they are case sensitive
+
+ex: 
+
+let firstName = 'pp';
+let nextName = 'pp2';
+
+
