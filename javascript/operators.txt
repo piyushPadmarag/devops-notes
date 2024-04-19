@@ -1,3 +1,100 @@
 
-let x = 10;
-let y =3;
+        let x = 10;
+        let y =3;
+
+        console.log(x+y);
+        console.log(x-y);
+        console.log(x*y);
+        console.log(x/y);
+        console.log(x%y);
+        console.log(x**y);
+
+ increment (++) and decrement operators:
+
+        console.log(x++);
+        console.log(x);
+
+        console.log(--x);
+        console.log(x--);
+        console.log(x);
+
+
+ assignment operator:
+
+        x = x+5;
+        x += 5;
+
+        x = x*3;
+        x *= 3;
+
+ comparision operator:
+        let x = 1;
+
+        console.log(x>0);
+
+        console.log(x>2);
+
+        console.log(x<=2);
+
+        console.log(x<=1);
+
+        console.log(x===2);
+
+        console.log(x!==2);
+
+
+ Equality operator:
+
+        console.log(1 === 1); //strict equality operator
+
+
+        console.log(1 == 1); //loose equality operator
+
+        console.log('1' === 1); //result is false
+
+        console.log('1' == 1); // result is true
+
+        console.log(true == 1); // result is true as 1 means true
+
+        console.log(false == 1); //result is false
+
+//Ternary or conditional operator:
+
+        let points = 110;
+        let type = points > 100 ? 'gold' : 'silver';
+
+        console.log(type);
+
+        points = 90;
+        type = points > 100 ? 'gold' : 'silver';
+
+        console.log(type);
+
+Logical operator: AND (&&) OR (||) NOT (!):
+
+        console.log(true && true);
+        console.log(true && false);
+        console.log(false && true);
+
+        let highIncome = false;
+        let goodCreditScore = false;
+        let eligible = highIncome && goodCreditScore;
+        let eligible2 = highIncome || goodCreditScore;
+        console.log(eligible);
+        console.log(eligible2);
+
+        let applicationRefused = !eligible2;
+        console.log('is the person eligible:', eligible2);        
+        console.log('application refused?', applicationRefused);
+
+Logical operator with non-Booleans
+
+        let userColour = undefined;
+        let defaultColour = 'red-yellow';
+        let currentColour = userColour || defaultColour;
+        console.log(currentColour);
+
+BitWise Operator:
+        console.log(1 | 2); 
+        console.log(1 & 2);
+        
