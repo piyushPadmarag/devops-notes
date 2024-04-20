@@ -1,0 +1,89 @@
+If/else:
+
+    let hour = 13; 
+
+    if (hour >= 6 && hour < 12) {
+        console.log('Good morning');
+    }
+    else if (hour >= 12 && hour < 18){
+        console.log('Good Afternoon');
+    }
+    else 
+    console.log('Good Evening')
+
+Switch:
+
+    let role = 'moderator';
+
+    switch(role) {
+    case 'guest':
+        console.log('Guest user');
+        break;
+
+    case 'moderator':
+        console.log('Moderate user');
+        break;
+    default:
+        console.log('unknown user');
+    }
+
+
+Loops:
+
+    for (let i = 1; i <= 5; i++){
+        console.log('Hello World', i);
+    }
+
+    for (let i = 5; i >= 1; i--){
+    if (i % 2 !== 0) console.log(i);
+    }
+
+While:
+
+   let i = 0;
+   while (i <= 5) {
+    if (i % 2 !==0) console.log(i);
+    i++;
+   }
+
+Do-While:
+
+        let i = 0;
+
+    do {
+        if (i % 2 !== 0) console.log(i);
+        i++;
+    } while(i <= 25);
+
+For in :
+
+    const person = {
+        name: 'Mosh',
+        age: 22
+    };
+
+    for (let key in person)
+        console.log(key, person[key]);
+
+    const colors = ['red', 'green', 'blue'];
+
+    for (let index in colors)
+    console.log(index, colors[index]);    
+
+For of :
+
+    const colors = ['rewd', 'green', 'blue'];
+    for (let color of colors)
+    console.log(color);
+
+Break and Conitnue:
+    let i = 0;
+    while (i<=10){
+    //    if (i === 5) break;
+        if (i % 2 ===0){
+            i++;
+            continue;
+        }
+        console.log(i);
+        i++
+    }
