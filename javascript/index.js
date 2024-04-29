@@ -1,23 +1,15 @@
-let a = 'fizz';
-let b = 'buzz';
-let c = 'fizzBuzz';
-let d = 'not a Number';
-const output = fizzBuzz(15);
-console.log(output);
-function fizzBuzz(input){
-if (typeof input !== 'number'){
-        return d;
+function createCircle(radius) {  
+return {
+    radius,
+    draw() {
+        console.log('draw2');
+    }
+};
 }
-else if (input % 5 === 0 && input % 3 === 0){
-    return c;
-}
-else if (input % 5 === 0){
-    return b;
-}
-else if (input % 3 === 0 ){
-    return a;
-}
-else if ((input % 5 !== 0) && (input % 3 !== 0)){
-    return input;
-}
-}
+//Factory functions
+
+const circle1 = createCircle(14);
+console.log(circle1);
+
+const circle2 = createCircle(4);
+console.log(circle2);

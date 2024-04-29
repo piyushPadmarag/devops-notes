@@ -1,17 +1,77 @@
-official providers: aws, azure, gcp, etc 
-partner providers: heroku, digitalocean 
-community providers: activedirectory, ucloud etc 
+Plugins:
+    Terraform relies on plugins called providers to interact with cloud providers, SaaS providers, and other APIs.
+
+    Terraform configurations must declare which providers they require so that Terraform can install and use them.
+
+    Each provider adds a set of resource types and/or data sources that Terraform can manage.
+
+    Providers are distributed separately from Terraform itself
+
+    official providers: aws, azure, gcp, etc 
+    partner providers: heroku, digitalocean 
+    community providers: activedirectory, ucloud etc 
 
 terraform init: 
-showes the version of the plugin being installed, 
-downloaded in .terraform/plugin in the work dir containing config files 
+
+    The terraform init command initializes a working directory containing Terraform configuration files. 
+
+    This is the first command that should be run after writing a new Terraform configuration or cloning an existing one from version control. 
+
+    shows the version of the plugin being installed, 
+    downloaded in .terraform/plugin in the work dir containing config files 
 
 main.tf: a single config file containing all the resource definition
 
 terraform.tfstate and terraform.tfstate.backup: these files contain the Terraform state
 .terraform: this folder contains the modules and plugins used to provision the
 
-resource "local_file" "cyberpunk" 
+Terraform plan:
+
+    The terraform plan command creates an execution plan, 
+    which lets you preview the changes that Terraform plans to make to your infrastructure.
+
+    By default, when Terraform creates a plan it:
+
+    Reads the current state of any already-existing remote objects to make sure that the Terraform state is up-to-date.
+
+    Compares the current configuration to the prior state and noting any differences.
+
+    Proposes a set of change actions that should, if applied, make the remote objects match the configuration.
+
+    The plan command alone does not actually carry out the proposed changes
+  
+Terraform apply:
+
+    The terraform apply command executes the actions proposed in a Terraform plan.
+
+    When you run terraform apply without passing a saved plan file, Terraform automatically creates a new 
+
+    execution plan as if you had run terraform plan, prompts you to approve that plan, and takes the indicated actions. 
+
+Terraform destroy:
+
+    The terraform destroy command is a convenient way to destroy all remote objects managed by a particular Terraform configuration.
+
+Terraform show: 
+    to see the configuration details of the resources created by apply comaand.
+    It inspects the state file and displays the details.
+
+Block:
+
+    A block in terraform contains information about the infra platform and the resources that we want to create.
+
+    It is defined within curly brackets. 
+    sample block:
+
+    block_name resource_type resource_name {
+      key1 = value1
+      key2 = value2
+    }
+
+
+-------------------------------------------------
+
+resource "local_file" "cyberpunk" //local is the provider in the resource type local_file
 {
   filename     = "/root/cyberpunk2077.txt"
   content  = "All I need for Christmas is Cyberpunk 2077!"
