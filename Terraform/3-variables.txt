@@ -1,5 +1,19 @@
+Input variables:
+
+variable.tf:
+
+     variable "filename" {
+          default = "/root/sample.txt"
+     }
+
+main.tf:
+
+     resource "local_file" "demo" {
+          filename = var.filename
+     }
+
 to use variables in terraform, type keyword variable followed by var name 
-ex: fikename = var.filename
+ex: filename = var.filename
 
 data types: 
 
