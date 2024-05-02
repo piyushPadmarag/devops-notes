@@ -1,3 +1,9 @@
+Terraform state file is a JSON data-structure that maps real world infra to the infra specified in the main file
+
+
+Usage of state:
+
+        
 Which option should we use to disable state?  cannot disable the state
 
 Format of the state file? json 

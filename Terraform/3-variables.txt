@@ -4,6 +4,8 @@ variable.tf:
 
      variable "filename" {
           default = "/root/sample.txt"
+          type: string //optional 
+          description: "path of file"  //optional 
      }
 
 main.tf:
@@ -21,14 +23,18 @@ string: "like this"
 number: 5, 6.2
 bool: true 
 list: ["a", 15, true]
-set: 
+set: ["a", 15, true] //cannot have duplicate elements
 map: 
     {
     name = "John"
     age  = 52
     }
 
---------------------Example:-----------------------
+tuple: {
+     type = tuple([string, number, bool])
+     default = ["cat", 7, true]
+}
+----------------------------Example:-------------------------------
 
 variable "name" {
      type = string
@@ -72,7 +78,7 @@ variable "users" {
   
 }
 
---------------usage-------------------------
+---------------------usage---------------------------
 main.tf file:
 
 resource "local_file" "jedi" {
@@ -148,13 +154,22 @@ to destroy the resources created using the config file
 
 ---------------------------------------------------------------------------------
 output variable:
-resource "local_file" "time" {
-     filename = "/root/time.txt"
-     content = "Time stamp of this file is ${time_static.time_update.id} "
-     }
-     resource "time_static" "time_update" {
-     }
-output "demo" {
-     value = "time_static.time_update.id"
-     description = "the value of the id will be displayed at the time of apply"
-}     
+
+          Output values make information about your infrastructure available on the command line, and 
+
+          can expose information for other Terraform configurations to use. 
+
+          Output values are similar to return values in programming languages.
+
+          Each output value exported by a module must be declared using an output block:
+
+          resource "local_file" "time" {
+               filename = "/root/time.txt"
+               content = "Time stamp of this file is ${time_static.time_update.id} "
+               }
+               resource "time_static" "time_update" {
+               }
+          output "demo" {
+               value = "time_static.time_update.id"
+               description = "the value of the id will be displayed at the time of apply"
+          }
