@@ -1,0 +1,44 @@
+terraform validate:
+    we use this command to check if the syntax is correct or not.
+
+    Validate runs checks that verify whether a configuration is syntactically valid and 
+
+    internally consistent, regardless of any provided variables or existing state.
+    
+    Usage: terraform validate
+
+terraform init: 
+    The terraform init command initializes a working directory containing Terraform configuration files. 
+
+    This is the first command that should be run after writing a new Terraform configuration or cloning an existing one from version control. 
+
+    shows the version of the plugin being installed, 
+    downloaded in .terraform/plugin in the work dir containing config files 
+
+Terraform plan:
+    The terraform plan command creates an execution plan, 
+    which lets you preview the changes that Terraform plans to make to your infrastructure.
+
+    By default, when Terraform creates a plan it:
+
+    Reads the current state of any already-existing remote objects to make sure that the Terraform state is up-to-date.
+
+    Compares the current configuration to the prior state and noting any differences.
+
+    Proposes a set of change actions that should, if applied, make the remote objects match the configuration.
+
+    The plan command alone does not actually carry out the proposed changes
+  
+Terraform apply:
+   The terraform apply command executes the actions proposed in a Terraform plan.
+
+    When you run terraform apply without passing a saved plan file, Terraform automatically creates a new 
+
+    execution plan as if you had run terraform plan, prompts you to approve that plan, and takes the indicated actions. 
+
+Terraform destroy:
+    The terraform destroy command is a convenient way to destroy all remote objects managed by a particular Terraform configuration.
+
+Terraform show: 
+    to see the configuration details of the resources created by apply comaand.
+    It inspects the state file and displays the details.

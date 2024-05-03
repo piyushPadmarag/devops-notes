@@ -1,9 +1,12 @@
 Terraform state file is a JSON data-structure that maps real world infra to the infra specified in the main file
 
+It is the single source of truth for terraform to understand what is deployed in the real world.
 
-Usage of state:
+It is a non optional feature of terraform.
 
-        
+It contains sensitive information regarding the real world infra 
+
+so a config dir contains tf state file along with main file
 Which option should we use to disable state?  cannot disable the state
 
 Format of the state file? json 
@@ -34,3 +37,5 @@ USE OF STATE:
 3. Performance: Terraform stores a cache of the attribute values for all resources in the state
 
 4. Syncing: when using Terraform in a team it is important for everyone to be working with the same state so that operations will be applied to the same remote objects. Remote state is the recommended solution to this problem
+
+5. Tracks metadata of the objects created and their dependencies ie implicit and explicit 
