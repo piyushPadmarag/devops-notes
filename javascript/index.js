@@ -1,15 +1,17 @@
-function createCircle(radius) {  
-return {
-    radius,
-    draw() {
-        console.log('draw2');
+const circle = {
+    radius: 1,
+    draw () {
+        console.log('draw');
     }
 };
-}
-//Factory functions
 
-const circle1 = createCircle(14);
-console.log(circle1);
+for (let key in circle)
+console.log(key, circle[key]);
 
-const circle2 = createCircle(4);
-console.log(circle2);
+for (let key of Object.keys(circle))
+console.log(key);
+
+for (let entry of Object.entries(circle))
+console.log(entry);
+
+if ('radius' in circle) console.log('yes');

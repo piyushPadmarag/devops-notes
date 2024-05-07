@@ -6,6 +6,13 @@ terraform validate:
     internally consistent, regardless of any provided variables or existing state.
     
     Usage: terraform validate
+terraform fmt:
+    The terraform fmt command is used to rewrite Terraform configuration files to a canonical format and style
+
+    Other Terraform commands that generate Terraform configuration will produce configuration files that conform to the style imposed by terraform fmt, 
+    
+    so using this style in your own files will ensure consistency.
+    usage: terraform fmt main.tf
 
 terraform init: 
     The terraform init command initializes a working directory containing Terraform configuration files. 
@@ -40,5 +47,35 @@ Terraform destroy:
     The terraform destroy command is a convenient way to destroy all remote objects managed by a particular Terraform configuration.
 
 Terraform show: 
+    The terraform show command is used to provide human-readable output from a state or plan file.
+
     to see the configuration details of the resources created by apply comaand.
+
     It inspects the state file and displays the details.
+    usage: terraform show main.tf 
+
+Terraform providers: 
+    The terraform providers command shows information about the provider requirements of the configuration in
+    
+     the current working directory, as an aid to understanding where each requirement was detected from.
+
+     Usage: terraform providers
+
+terraform output:
+    The terraform output command is used to extract the value of an output variable from the state file.
+
+    displays the outputs defined in your Terraform configuration.
+
+    Usage: terraform output
+
+terraform refresh:
+    The terraform refresh command reads the current settings from all managed remote objects and updates the Terraform state to match.
+    Usage: terraform refresh, terraform apply -refresh-only -auto-approve
+
+terraform graph:
+    The terraform graph command produces descriptions of the relationships between objects in a Terraform configuration
+
+
+    Usage: terraform graph
+    ex: apt install graphviz -y
+        terraform graph -type=plan | dot -Tpng >graph.png

@@ -1,0 +1,107 @@
+//objects are collections of key-value pair
+
+const circle = {
+    radius: 1,
+    location: {
+        x: 1,
+        y: 1
+    },
+    isVisible: true, 
+    draw: function() {
+        console.log('draw');
+    }
+};
+
+circle.draw(); //method draw 
+-------------------------------------------------------
+
+Factory functions:
+
+function createCircle(radius) {  
+return {
+    radius,
+    draw() {
+        console.log('draw2');
+    }
+};
+}
+//Factory functions
+
+const circle1 = createCircle(14);
+console.log(circle1);
+
+const circle2 = createCircle(4);
+console.log(circle2);
+
+------------------------------------------------------
+
+Constructors:
+
+function createCircle(radius) {  
+return {
+    radius,
+    draw() {
+        console.log('draw');
+    }
+ };
+}
+
+//constructor function starts
+
+function AnotherCircle(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log('draw');
+    }
+    
+}
+
+const circle = new AnotherCircle(11);
+
+------------------------------------------------------------------
+constructor property:
+
+
+---------------------------------------------------------------
+value types vs Reference type:
+
+value types: number, string,boolean, symbol etc
+
+Reference types: object, function, Array
+
+primitives are copied by their value
+
+objects are copied by their reference 
+
+let x = { value: 10 };
+let y = x;
+
+x.value = 20;
+------------------------------------------------------------------
+let obj = { value: 10 };
+function increase(obj) {
+    obj.value++;
+    
+} 
+increase(obj);
+console.log(obj);
+-----------------------------------------------------------------
+Enumerating properties of an object:
+
+const circle = {
+    radius: 1,
+    draw () {
+        console.log('draw');
+    }
+};
+
+for (let key in circle)
+console.log(key, circle[key]);
+
+for (let key of Object.keys(circle))
+console.log(key);
+
+for (let entry of Object.entries(circle))
+console.log(entry);
+
+if ('radius' in circle) console.log('yes');
