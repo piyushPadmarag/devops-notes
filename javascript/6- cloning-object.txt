@@ -1,0 +1,48 @@
+Cloning of object in different ways:
+
+const circle = {
+    radius: 1,
+    draw () {
+        console.log('draw');
+    }
+};
+
+const another = {}; //1st way
+
+for (let key in circle)
+another[key] = circle[key];
+
+const another = Object.assign({}, circle); //2nd way
+
+const another = { ...circle }; //3rd way
+console.log(another);
+
+------------------------------------------------------------
+
+Garbage collection:
+It is used to find const and objects that are no longer in use and de-allocate their memory
+allocation. It happens automatically in the background.
+
+----------------------------------------------------------------
+Build-in objects in javascript:
+
+1.Math: 
+
+Math is a built in object that has properties and methods for mathematical constants and functions
+
+ex: 
+math.pi : gives the value of 22/7
+math.max(1,2,3): returns 3
+
+2. string:
+
+//string primitive
+const message = 'this is my first'; 
+
+//string object
+
+const another = new String('hi');
+
+3. Template literals:
+
+3
