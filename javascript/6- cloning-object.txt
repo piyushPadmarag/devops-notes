@@ -45,4 +45,4 @@ const another = new String('hi');
 
 3. Template literals:
 
-3
+4. date:

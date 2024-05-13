@@ -1,0 +1,104 @@
+adding elements:
+
+        const numbers = [3, 4];
+        // adding at the end
+
+        numbers.push(5, 6);
+
+        // adding at the beginning
+
+        numbers.unshift(1, 2);
+
+        //adding in the middle
+
+        numbers.splice(2, 0, 'a', 'b');
+
+        console.log(numbers);
+
+Finding elements:
+
+     Primitives:
+
+        const numbers = [1, 2, 3, 1, 4];
+        console.log(numbers.indexOf('1'));
+
+        console.log(numbers.lastIndexOf(1));
+
+        console.log(numbers.indexOf(1) !== -1);
+
+        console.log(numbers.includes(1));
+    
+    Reference Types:
+
+        const courses = [
+            {id: 1, name: 'a' },
+            {id: 2, name: 'b' },
+        ];
+
+        console.log(courses.includes({ id: 1, name: 'a'}));
+
+        const course = courses.findIndex (function(course) {
+            return course.name === 'a';
+        });
+
+        console.log(course);
+
+Arrow Functions:
+
+        const courses = [
+            {id: 1, name: 'a' },
+            {id: 2, name: 'b' },
+        ];
+
+        console.log(courses.includes({ id: 1, name: 'a'}));
+
+        const course = courses.find(course => course.name === 'a'); 
+
+        console.log(course);
+
+Removing Elements:
+
+        const numbers = [1, 2, 3, 4];
+
+        //end
+        const last = numbers.pop();
+
+        console.log(numbers);
+
+        //beginning
+        const first = numbers.shift();
+
+        console.log(first);
+
+        //middle
+        numbers.splice()
+        numbers.splice(2, 1);
+
+        console.log(numbers);
+
+Emptying an array:
+
+        let numbers = [1, 2, 3, 4];
+        let another = numbers;
+        //solution 1:
+
+        numbers = [];
+
+        //console.log(numbers);
+
+        //console.log(another);
+
+        //solution 2:
+
+        numbers.length = 0;
+
+        // solution 3:
+
+        numbers.splice(0, numbers.length);
+
+        //solution 4:
+
+        while(numbers.length >0)
+        numbers.pop ();
+
+combining and slicing arrays: 
