@@ -1,22 +1,13 @@
-let numbers = [1, 2, 3, 4];
-let another = numbers;
-//solution 1:
+const numbers = [1, 2, 3];
 
-//numbers = [];
+const joint = numbers.join(',');
 
-//console.log(numbers);
+console.log(joint);
 
-//console.log(another);
+const message = 'This is my first message';
 
-//solution 2:
+const parts = message.split(' ');
+console.log(parts);
 
-//numbers.length = 0;
-
-// solution 3:
-
-//numbers.splice(0, numbers.length);
-
-//solution 4:
-
-while(numbers.length >0)
-numbers.pop ();
+const combine = parts.join('-');
+console.log(combine);

@@ -102,3 +102,60 @@ Emptying an array:
         numbers.pop ();
 
 combining and slicing arrays: 
+
+        const first = [1, 2, 3];
+
+        const sec = [4, 5, 6];
+
+        const combine = first.concat(sec);
+
+        console.log(combine);
+
+        const slice =  combine.slice(2);
+
+        console.log(combine);
+        console.log(slice);
+
+Spread operator:
+
+        const first = [1, 2, 3];
+
+        const sec = [4, 5, 6];
+
+        const combine = [...first, 'a', ...sec];
+
+        const copy =  [...combine];
+
+        console.log(combine);
+
+Iterating an array:
+
+        const numbers = [1, 2, 3];
+
+        for(let number of numbers)
+            console.log(number);
+
+        //second method
+        numbers.forEach(function(number) {
+            console.log(number);
+        })
+
+        //Third method
+        numbers.forEach(number => console.log(number));
+
+Joining arrays:
+
+        const numbers = [1, 2, 3];
+
+        const joint = numbers.join(',');
+
+        console.log(joint);
+
+        const message = 'This is my first message';
+
+        const parts = message.split(' ');
+        console.log(parts);
+
+        const combine = parts.join('-');
+        console.log(combine);
+
