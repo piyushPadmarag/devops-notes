@@ -1,0 +1,3 @@
+Filesystem is a system by an operating system to manage files.
+
+Os stores files and dir in an organized and structured way
