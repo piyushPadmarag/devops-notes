@@ -1,3 +1,33 @@
 Filesystem is a system by an operating system to manage files.
 
 Os stores files and dir in an organized and structured way
+
+/boot: dir that contains booting/boot loader files (ex: grub.cfg)
+
+/root: root user home dir. It is not same as /
+
+/dev: system devices like keyboard,speaker, pen drives
+
+/etc: configuration files 
+
+/bin (for new versions: /usr/bin): everyday user commands
+
+/sbin (/usr/sbin): system/filesystem commands
+
+/opt: optional add on apps(not part of standard os)
+
+/proc: running process(only exist in memory)
+
+/lib(/usr/lib): c programming library files needed by commands and apps 
+
+/tmp: temporary files
+
+/home: dir for user
+
+/var: system logs directory 
+
+/run: system daemons that starts very early to store temporary runtime files ex: PID files 
+
+/mnt: to mount external filesystem 
+
+/media: for cdrom mounts
