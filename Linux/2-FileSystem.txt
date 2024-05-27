@@ -31,3 +31,7 @@ Os stores files and dir in an organized and structured way
 /mnt: to mount external filesystem 
 
 /media: for cdrom mounts
+
+-----------------------commands to navigate file systems-------------------------------------------------
+
+cd pwd ls whoami  
