@@ -51,11 +51,24 @@ what is root?
 
 There are 3 types of root on linux system:
 
-1. Root accout: root is an account or a username on the vm which is the admin account 
+1. Root account: root is an account or a username on the vm which is the admin account 
 
 2. Root as /: the very first dir in linux 
 
 3. root home dir: the root user account has a root account named root (/root)
 
-----------------changing password--------------------
+--------------------------changing password--------------------
+
+passwd userid
+enter old password:
+new password:
+retype new password:
+
+---------------------File system paths----------------------
+
+there are two paths to navigate to a filesystem:
+
+1. absolute paths: begins with / , indicates the path starts at the root directory. ex: cd /var/log/sambha
+
+2. relative path: does not begins with / , it identifies a position relative to your current position. ex: cd log/
 
