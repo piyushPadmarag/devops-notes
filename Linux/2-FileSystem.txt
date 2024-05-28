@@ -34,4 +34,28 @@ Os stores files and dir in an organized and structured way
 
 -----------------------commands to navigate file systems-------------------------------------------------
 
-cd pwd ls whoami  
+cd pwd ls whoami 
+
+----------------------Linux file types-------------------
+
+- regular file (-xr-)
+d directory (dxr-xr-x)
+l link
+c special file
+s socket
+p Named pipe
+b Block device 
+
+-----------------------------------------------------
+what is root?
+
+There are 3 types of root on linux system:
+
+1. Root accout: root is an account or a username on the vm which is the admin account 
+
+2. Root as /: the very first dir in linux 
+
+3. root home dir: the root user account has a root account named root (/root)
+
+----------------changing password--------------------
+
