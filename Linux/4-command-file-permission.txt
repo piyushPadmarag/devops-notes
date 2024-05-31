@@ -1,0 +1,53 @@
+commands syntax:
+
+command option argument
+
+options:
+modify the way that a command works
+usually consist of a hyphen followed by a single letter
+
+Argument:
+most commands are used together with one or more argument 
+some commands assume a default argument if none is supplied 
+arguments are optional for some commands and required by others
+
+-----------------------File permissions-----------------------------
+
+there are 3 type of permissions:
+read 
+write
+execute
+
+every permission can be controlled at 3 levels:
+u - user
+g - group - people from the same project
+o - others - everyone on the system
+a - all 
+
+file or dir permission can be displayed by running ls -l command for ex:
+-rwx--w----x 
+
+To change permission: chmod [options] [mode] [File_name] 
+
+symbolic mode: 
+
++ add permission
+- remove permission
+= set the permission to specified value
+
+ex:
+chmod u+rwx [file_name]
+chmod go-w [file_name]
+chmod u+rw,go+r [file_name] (read and wrote for user and read only for group and others)
+
+octal mode: 
+
+4	Read Permission
+2	Write Permission
+1	Execute Permission
+
+ex:
+
+chmod 674 [file_name] (read and write permission to the file Owner. Read, write and executable permission to the Group. Read-only permission to the Other)
+
+
