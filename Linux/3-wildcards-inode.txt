@@ -1,0 +1,37 @@
+A wildcard is a character that can be used as a substitute for any of a class of characters in a search.
+
+ex: 
+
+* represents zero or more character 
+? represents a single character
+[] represents a range of characters
+\ (slash): as an escape character
+^ (caret): beginning of a line
+$ end of line  
+
+ touch piyush{1..4}-padmarag
+ 
+ rm piyush*
+
+ ls -l ?iyu*
+
+  ls -l *[yr]* | more
+
+  -------------------------------------inode-softlink-hard link--------------------------------------
+
+  inode: pointer or a unique number of the file on the hard disk. contains metadata of the file like permission,size,type etc 
+
+  soft link: it is like a shortcut to the original file or dir. if file is renamed or removed, it will be 
+             removed. it will have different inode no 
+             ex: lrw-w-x (l represents soft link)
+             cd target-destination 
+             ln -s /home/piyush/pp.txt (path of the source file)
+
+  hard link: it is like copy of the file. deleting or renaming or moving the original file will not affect
+             the hard link. it will have same inode number. hard link works within the same partition of disk
+             ex: 
+             cd target-destination 
+             ln /home/piyush/pp.txt (path of the source file)
+
+Note: you cannot create soft or hard link within the same dir with the same name. That is wwhy we will create links in 
+        /tmp dir.

@@ -72,3 +72,30 @@ there are two paths to navigate to a filesystem:
 
 2. relative path: does not begins with / , it identifies a position relative to your current position. ex: cd log/
 
+-----------------creating file and directory----------------------
+
+creating files: 
+1. touch: touch filename
+
+2. cat: cat  >> filename , then add content, then ctrl c. 
+
+3. vi : vi filename 
+
+4. dd: dd if= /dev/zero of= /root/gumbo bs=1 count=4
+
+creating directory:
+
+mkdir
+
+copy directory:
+
+cp -r source destination
+
+-----------------finding files and directories---------------------------
+
+locate filename
+find . -name "finlename"
+
+difference between find and locate:
+
+locate is ,much faster than find but can be inaccurate if the db is not updated as it uses pre built db
