@@ -42,12 +42,34 @@ chmod u+rw,go+r [file_name] (read and wrote for user and read only for group and
 
 octal mode: 
 
+7   all 
+6   read + write
+5   read + execute
 4	Read Permission
+3   execute + write
 2	Write Permission
 1	Execute Permission
+0   No permission
 
 ex:
 
 chmod 674 [file_name] (read and write permission to the file Owner. Read, write and executable permission to the Group. Read-only permission to the Other)
 
 
+-----------------------------------File ownership---------------------------------
+
+
+There are 2 owners of a file or directories: user and group 
+
+Command to change file ownership: 
+
+1. chown: it changes the ownership of a file 
+
+2. chgrp: it changes the group ownership of a file 
+
+-R option will change the dir ownership and for all the items inside it
+
+ex: 
+chown root:root filename 
+chown piyush:root filename
+chown -r root:piyush dir 
