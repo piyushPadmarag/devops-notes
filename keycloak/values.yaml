@@ -1295,7 +1295,7 @@ keycloakConfigCli:
           {
             "username": "piyush",
             "enabled": true,
-            "email": "piyush@globallogic.com",
+            "email": "piyush@gl.com",
             "realmRoles": [
                 "offline_access"
               ],
