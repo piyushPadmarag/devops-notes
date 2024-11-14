@@ -83,6 +83,7 @@ resource "local_file" "my-pet" {
 filename = "/root/pet-name"
 content = "My pet is called finnegan!!"
 }
+
 resource "random_pet" "other-pet" {
 length = 1
 prefix = "Mr"
@@ -90,3 +91,12 @@ separator = "."
 }
 
 ------
+
+while running terraform apply or plan the contents of the file might be display.
+If we want tf not to display it we can use local_sensitive_file and 
+ sensitive_content in the above example:
+
+resource "local_sensitive_file" "my-pet" {
+filename = "/root/pet-name"
+sensitive_content = "My pet is called finnegan!!"
+}
