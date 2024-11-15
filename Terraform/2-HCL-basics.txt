@@ -23,6 +23,7 @@ terraform init:
 main.tf: a single config file containing all the resource definition
 
 terraform.tfstate and terraform.tfstate.backup: these files contain the Terraform state
+
 .terraform: this folder contains the modules and plugins used to provision the
 
 Terraform plan:
@@ -71,7 +72,7 @@ Block:
 
 -------------------------------------------------
 
-resource "local_file" "cyberpunk" //local is the provider in the resource type local_file
+resource "local_file" "cyberpunk" ##local is the provider in the resource type local_file
 {
   filename     = "/root/cyberpunk2077.txt"
   content  = "All I need for Christmas is Cyberpunk 2077!"

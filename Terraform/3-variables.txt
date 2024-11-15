@@ -97,6 +97,15 @@ variable "jedi" {
   
 }
 ---------------------------------------------------------
+Variable Definition files: (terraform.tfvars, terraform.tfvars.json, *.auto.tfvars.json, *.auto.tfvars)
+
+content ex: 
+
+filename = "/theme/bsbu.txt"
+content = "keycloak theme"
+prefix = "Mrs"
+
+--------------------------------------------------------------
 
 priority: 
 command line flags > *.auto.tfvars > terraform.tfvars > Env vars 

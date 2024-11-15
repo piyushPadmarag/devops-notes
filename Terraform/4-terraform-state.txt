@@ -2,7 +2,7 @@ Terraform state file is a JSON data-structure that maps real world infra to the 
 
 It is the single source of truth for terraform to understand what is deployed in the real world.
 
-It is a non optional feature of terraform.
+It is a non optional feature of terraform. we cannot disable the state.
 
 It contains sensitive information regarding the real world infra 
 
