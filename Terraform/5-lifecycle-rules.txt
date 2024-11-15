@@ -46,7 +46,7 @@ resource "random_string" "string" {
 -----------------------------------------Data Souce-----------------------------------
 
  A data source once created, cannot be used to create, update, and destroy infrastructure.
- A data source can be created using the data block.
+ A data source can be created using the "data" block.
 
  output "os-version" {
     value = data.local_file.os.content
