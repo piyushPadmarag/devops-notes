@@ -1,0 +1,4 @@
+----------------iam-user.tf--------------------------
+resource "aws_iam_user" "users" {
+  name = "marry"
+}
