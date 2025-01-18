@@ -35,6 +35,13 @@ Terraform plan:
     Proposes a set of change actions that should, if applied, make the remote objects match the configuration.
 
     The plan command alone does not actually carry out the proposed changes
+    
+    To save the plan run: terraform plan -out main.tfplan
+	
+    later, To perform exactly these actions, 
+	run the following command to apply:
+    	
+	terraform apply "main.tfplan"
   
 Terraform apply:
    The terraform apply command executes the actions proposed in a Terraform plan.
